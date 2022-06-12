@@ -8,23 +8,15 @@ const obj = { name: "Jeremy", age: 24, role: "Software Engineer" };
 
 toArr(obj);
 
-function toArr({ ...obj }) {
-  console.log(obj);
-  console.log(Object.keys(obj));
+function toArr(obj) {
+  return Object.entries(obj).sort(function (a, b) {
+    if (a[0] < b[0]) {
+      return -1;
+    }
+    if (a[0] > b[0]) {
+      return 1;
+    }
 
-  const resArr = [];
-
-  for (let prop in obj) {
-    console.log("obj." + prop + " = " + obj[prop]);
-    console.log([prop, obj[prop]]);
-    resArr.push([prop, obj[prop]]);
-  }
-
-  console.log(resArr);
-
-  return resArr;
-
-  /*  Object.keys(obj).map((item)=>{
-
-  }) */
+    return 0;
+  });
 }

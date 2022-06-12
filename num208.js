@@ -11,6 +11,29 @@ console.log(findUnique([1, 8, 4, 4, 6, 1, 8]));
 function findUnique(arr) {
   // Return the unique number
 
+  const objNums = {};
+
+  let z = 0;
+
+  //console.log(":::", objNums[arr[2]]);
+  for (let i = 0; i < arr.length; i++) {
+    if (objNums[arr[i]] == undefined) {
+      objNums[arr[i]] = 0;
+    }
+    objNums[arr[i]]++;
+  }
+
+  console.log(Object.keys(objNums));
+  console.log(objNums);
+
+  for (let num of Object.keys(objNums)) {
+    console.log(num, objNums[num]);
+    if (objNums[num] == 1) {
+      return +num;
+    }
+  }
+}
+/*  console.log("o", objNums);
   const arrSet = [...new Set(arr)];
   arrSet.sort();
   // console.log(arrSet);
@@ -30,13 +53,13 @@ function findUnique(arr) {
   const arrTwo = arrSum.forEach((item, index) => {
     item == 1 ? (result = arrSet[index]) : false;
   });
-  return result;
+  return result; */
 
-  /*   let res = [...new Set(numbers)];
+/*   let res = [...new Set(numbers)];
   console.log(res);
 
   let resArr = [0, 0, 0, 0]; /* new Array(res.length); */
-  /* let k = 0;
+/* let k = 0;
 
   let p = 0;
   for (let z = 0; z < res.length; z++) {}
@@ -46,7 +69,6 @@ function findUnique(arr) {
       console.log(resArr[z]);
     }
   } */
-}
 
 //let k = 0;
 /*  let res;

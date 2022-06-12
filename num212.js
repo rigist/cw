@@ -11,12 +11,12 @@
 //                     "-"      " "    " "     " "     "!"
 //=== "e6t-r3s are r4y fun!"
 
+console.log(abbreviate("Accessibility"));
 function abbreviate(str) {
   let result = str.replace(
-    /([a-z])([a-z]{3,})([a-z])/g,
+    /([a-z])([a-z]{2,})([a-z])/gi,
     function (match0, match1, match2, match3) {
-      // console.log( match1.length, match1, match2, match3
-      //  );
+      console.log(match1.length, match1, match2, match3);
       let res = `${match1}${match2.length}${match3}`;
       return res;
     }

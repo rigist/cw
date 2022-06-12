@@ -4,19 +4,13 @@
 5, 2, "multiply" --> 10
 5, 2, "divide"   --> 2.5 */
 
+const operations = {
+  add: (a, b) => a + b,
+  subtract: (a, b) => a - b,
+  multiply: (a, b) => a * b,
+  divide: (a, b) => a / b,
+};
+
 function arithmetic(a, b, operator) {
-  switch (operator) {
-    case "add":
-      return a + b;
-      break;
-    case "subtract":
-      return a - b;
-      break;
-    case "multiply":
-      return a * b;
-      break;
-    case "divide":
-      return a / b;
-      break;
-  } //switch
+  return operations[operator](a, b);
 }
