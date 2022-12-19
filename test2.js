@@ -11,17 +11,11 @@ const addOneMultTwo = compose(multTwo, addOne);
 
 function compose(...fns) {
   fns.reverse();
-  //console.log("r", fns);
-  let result = 0;
 
   return function (arg) {
-    // console.log(fns.length);
-    if (fns.length > 0) {
-      for (const f of fns) {
-        arg = f(arg);
-      } //for
-    } //if
-    // console.log(arg);
+    for (const f of fns) {
+      arg = f(arg);
+    }
     return arg;
   };
   // console.log(fns);
